@@ -64,6 +64,13 @@ python -m venv .venv
 4. 在 `templates/login.html` 與 `app.py` 找到 `/login`、`/logout` 與 Session 驗證機制。
 5. 在 `templates/admin.html` 與 `static/admin.js` 看管理員如何透過 `PATCH /api/tickets/<案件編號>` 更新狀態，以及透過 `DELETE /api/tickets/<案件編號>` 刪除案件。
 
+## AI Agent 輔助開發
+
+本專案包含兩份供 AI Agent 使用的輔助文件：
+
+- **`AGENTS.md`**：定義 Agent 操作本專案時應遵守的行為準則，包含禁止修改的檔案清單、安全的修改範圍，以及程式碼修改規範。所有自動化修改均須先閱讀此文件。
+- **`skills/project/SKILL.md`**：定義可重複使用的報修功能驗證步驟（共七步），涵蓋建立報修單、必填欄位防呆、案件列表查詢、Session 保護、狀態更新與案件刪除。每次修改報修相關程式碼後，Agent 應執行此 Skill 確認功能仍正常。
+
 ## 注意事項
 
 本範例把案件資料存在 Python 的記憶體中，停止或重啟程式後，資料會清空。
